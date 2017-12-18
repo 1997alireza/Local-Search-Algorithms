@@ -8,8 +8,6 @@ public abstract class Problem{
     public Problem(){
     }
     public abstract State getInitialState();
-    public ArrayList<State> getNeighbors(State s){
-        return s.getNeighbors();
-    }
     public abstract double objectiveFunction(State s);
+    public abstract State getRandomState();
 }

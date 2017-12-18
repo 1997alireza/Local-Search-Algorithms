@@ -11,10 +11,7 @@ public class EightQueen extends Problem {
 
     @Override
     public State getInitialState() {
-        int [] initialS = new int[8];
-        for(int i = 0; i < 8; i++)
-            initialS[i] = (int)(Math.random() * 8);
-        return new PState(initialS);
+        return getRandomState();
     }
 
     @Override
@@ -29,9 +26,16 @@ public class EightQueen extends Problem {
                     confNum++;
             }
         }
-        return confNum;
+        return -1 * confNum;
     }
 
+    @Override
+    public State getRandomState() {
+        int [] qp = new int[8];
+        for(int i = 0; i < 8; i++)
+            qp[i] = (int)(Math.random() * 8);
+        return new PState(qp);
+    }
 
     private class PState extends State {
         int queenPlaces[];
@@ -53,6 +57,16 @@ public class EightQueen extends Problem {
                 }
             }
             return neighborStates;
+        }
+
+        @Override
+        public State getRandomNeighbor() {
+            int i = (int) (Math.random() * 8);
+            int d = (int) (Math.random() * 7) + 1;
+            this.queenPlaces[i] = (this.queenPlaces[i] + d) % 8;
+            PState returnValue = new PState(this.queenPlaces);
+            this.queenPlaces[i] = (this.queenPlaces[i] - d + 8) % 8;
+            return returnValue;
         }
 
         @Override
