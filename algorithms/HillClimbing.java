@@ -8,6 +8,7 @@ public abstract class HillClimbing extends LocalSearch {
     protected State search(Problem p) {
         State s = p.getInitialState();
         while(true){
+            expandedStatesNumber++;
             State nextState = getNextState(s, p);
             if(nextState != null){
                 s = nextState;

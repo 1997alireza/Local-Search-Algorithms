@@ -11,8 +11,10 @@ public class StochasticHC extends HillClimbing {
         double currentObjective = p.objectiveFunction(s);
         ArrayList<State> betterStates = new ArrayList<>();
         for(State neiState : s.getNeighbors()){
-            if(p.objectiveFunction(neiState) > currentObjective)
+            if(p.objectiveFunction(neiState) > currentObjective) {
                 betterStates.add(neiState);
+            }
+            visitedStatesNumber++;
         }
         if(betterStates.size() == 0)
             return null;

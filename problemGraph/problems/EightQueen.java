@@ -39,9 +39,6 @@ public class EightQueen extends Problem {
 
     private class PState extends State {
         int queenPlaces[];
-        public PState(int p0, int p1, int p2, int p3, int p4, int p5, int p6, int p7){
-            queenPlaces = new int[]{p0, p1, p2, p3, p4, p5, p6, p7};
-        }
         private PState(int [/*8*/] queenPlaces){
             this.queenPlaces = new int[8];
             System.arraycopy(queenPlaces, 0, this.queenPlaces, 0, 8);
@@ -63,9 +60,9 @@ public class EightQueen extends Problem {
         public State getRandomNeighbor() {
             int i = (int) (Math.random() * 8);
             int d = (int) (Math.random() * 7) + 1;
-            this.queenPlaces[i] = (this.queenPlaces[i] + d) % 8;
-            PState returnValue = new PState(this.queenPlaces);
-            this.queenPlaces[i] = (this.queenPlaces[i] - d + 8) % 8;
+            queenPlaces[i] = (queenPlaces[i] + d) % 8;
+            PState returnValue = new PState(queenPlaces);
+            queenPlaces[i] = (queenPlaces[i] - d + 8) % 8;
             return returnValue;
         }
 

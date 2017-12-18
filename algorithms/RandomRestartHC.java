@@ -25,6 +25,7 @@ public class RandomRestartHC extends HillClimbing{
                 nextMaxObjective = neiStateObjective;
                 nextState = neiState;
             }
+            visitedStatesNumber++;
         }
         if(nextState != null && nextMaxObjective <= currentObjective) {
             if(randomNumber < MAX_RANDOM_TIME) {

@@ -10,6 +10,7 @@ public class FirstChoiceHC extends HillClimbing {
         double currentObjective = p.objectiveFunction(s);
         for(int i = 0; i < MAX_RANDOM_TIME; i++){
             State randomNeighbor = s.getRandomNeighbor();
+            visitedStatesNumber++;
             if(p.objectiveFunction(randomNeighbor) > currentObjective)
                 return randomNeighbor;
         }

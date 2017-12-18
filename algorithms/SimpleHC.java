@@ -15,6 +15,7 @@ public class SimpleHC extends HillClimbing{
                 nextMaxObjective = neiStateObjective;
                 nextState = neiState;
             }
+            visitedStatesNumber++;
         }
         if(nextState != null && nextMaxObjective <= currentObjective)
             return null;
