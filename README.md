@@ -1,4 +1,4 @@
-# Non Classical Search Algorithms
+# Local Search Algorithms
 #### Algorithms
 - Annealing Simulated
 - Hill Climbing
