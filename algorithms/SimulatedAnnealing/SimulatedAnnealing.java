@@ -22,10 +22,11 @@ public class SimulatedAnnealing extends LocalSearch{
             State randomNeighbor = s.getRandomNeighbor();
             visitedStatesNumber++;
             if(p.objectiveFunction(randomNeighbor) > p.objectiveFunction(s)
-                    || Math.random() < coolingScheduler.possibility(n)) {
+                    || Math.random() < coolingScheduler.possibility(n+tryNum)) {
                 s = randomNeighbor;
                 expandedStatesNumber++;
                 n++;
+                tryNum = 0;
             }
             else {
                 tryNum++;
