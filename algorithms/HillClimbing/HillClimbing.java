@@ -1,5 +1,6 @@
-package algorithms;
+package algorithms.HillClimbing;
 
+import algorithms.LocalSearch;
 import problemGraph.State;
 import problemGraph.problems.Problem;
 

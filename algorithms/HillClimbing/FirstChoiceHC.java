@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.HillClimbing;
 
 import problemGraph.State;
 import problemGraph.problems.Problem;
